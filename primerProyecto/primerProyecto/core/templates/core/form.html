@@ -1,0 +1,21 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<h2 class="text-center">Formulario libros</h2>
+<form action="{% url 'crear' %}" method="POST" class="form">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="isbn" class="form-label">ISBN:</label>
+        <input type="text" name="isbn" id="isbn" class="form-control" placeholder="Ingrese el ISBN">
+    </div>
+    <div class="mb-3">
+        <label for="title" class="form-label">Titulo:</label>
+        <input type="text" name="title" id="title" class="form-control" placeholder="Ingrese el título">
+    </div>
+    <div class="mb-3">
+        <label for="author" class="form-label">Author:</label>
+        <input type="text" name="author" id="author" class="form-control" placeholder="Ingrese el autor">
+    </div>
+    <button type="submit" class="btn btn-primary">Crear</button>
+</form>
+{% endblock %}
