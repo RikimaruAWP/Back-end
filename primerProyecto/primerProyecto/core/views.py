@@ -29,5 +29,9 @@ def create_book(request):
     return render(request, 'core/create.html', {'mensaje':mensaje})
     
 def delete_book(request, isbn):
-    l.eliminar_libro(isbn)
-    return render(request, 'core/delete.html')
+    mensaje=l.eliminar_libro(isbn)
+    return render(request, 'core/delete.html',{'mensaje':mensaje})
+
+def update_book(request, isbn):
+    mensaje=l.actualizar_libro(isbn)
+    return render(request, 'core/update.html',  {'mensaje':mensaje})  

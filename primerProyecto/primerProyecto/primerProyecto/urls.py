@@ -25,4 +25,5 @@ urlpatterns = [
     path('form/', views.form_books, name='formulario'),
     path('create/', views.create_book, name='crear'),
     path('delete/<isbn>', views.delete_book, name='eliminar'),
+    path('update/<isbn>', views.update_book, name='actualizar'),
 ]

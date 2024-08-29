@@ -46,3 +46,12 @@ class Library:
         else:
             self.books_list.remove(result)
             return 'Libro eliminado'
+        
+    def actualizar_libro(self, book):
+        result = self.buscar_libro(book.isbn)
+        if result is None:
+            return 'Libro no encontrado'
+        else:
+            result.title = book.title
+            result.author = book.author
+            return 'Libro actualizado'
