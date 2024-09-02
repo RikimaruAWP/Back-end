@@ -1,0 +1,12 @@
+{% extends "core/base.html" %}
+{% block content %}
+
+    <form action="{% url 'eliminar' %}" method="post">
+        {% csrf_token %} 
+        <p>Estas seguro que desea elimanar el libro?</p>
+        <input type="text" name="isbn" value="{{ isbn }}" hidden  >
+        <button>Si, elimanar</button>
+    </form>
+
+
+{% endblock %}

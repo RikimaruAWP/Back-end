@@ -1,0 +1,33 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+<h2 class="text-center">Listando libros</h2>
+{% if books %}
+    <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ISBN</th>
+        <th scope="col">TITULO</th>
+        <th scope="col">AUTOR</th>
+        <th scope="col">ACCIONES</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for b in books %}  
+      <tr>
+        <td>{{ b.isbn }}</td>
+        <td>{{ b.title }}</td>
+        <td>{{ b.author }}</td>
+        <td>
+          <a href="{% url 'confirmar_eliminacion' b.isbn %}" class="btn btn-danger">Eliminar</a>
+          <a href="{% url 'update' b.isbn %}" class="btn btn-warning">Editar</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    {% else %}
+        <h2>Lista vacia</h2>
+    {% endif %}
+
+</table>
+{% endblock %}
